@@ -2,8 +2,10 @@ import React from "react";
 const NavBar = (props) => {
     return(
         <div>
-            <button>Home</button>
-            <button>My List</button>
+            <
+            
+            <a href="Home.html">Home</a>
+
             <button>Friends</button>
             <button>About us</button>
             <button>Contact Us</button>
