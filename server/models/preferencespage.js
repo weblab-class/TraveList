@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 //preferences options
-const Preferencespage = new mongoose.Schema({
+const PreferencespageSchema = new mongoose.Schema({
   title: { type: String, default: "Untitled" },
   genderpreference: {
     type: String,
@@ -53,4 +53,4 @@ const Preferencespage = new mongoose.Schema({
 });
 
 // compile model from schema
-module.exports = mongoose.model("Preferences", Preferencespage);
+module.exports = mongoose.model("preferences", PreferencespageSchema);
