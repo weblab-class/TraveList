@@ -1,13 +1,14 @@
 const mongoose = require("mongoose");
 
+const List = require("./packinglist");
+
 //account information for each person on settings page
 const AccountSchema = new mongoose.Schema({
   name: String,
   googleid: String,
-  username: String,
+  parent: String,
   password: String,
   bio: String,
-  lists: [],
 });
 
 // compile model from schema

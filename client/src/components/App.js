@@ -3,10 +3,9 @@ import { Router } from "@reach/router";
 import NotFound from "./pages/NotFound.js";
 import Skeleton from "./pages/Skeleton.js";
 import AboutUs from "./pages/AboutUs.js";
-
+import Profile from "./pages/Profile.js";
 
 import "../utilities.css";
-
 import { socket } from "../client-socket.js";
 
 import { get, post } from "../utilities";
@@ -45,6 +44,7 @@ const App = () => {
       <Router>
         <Skeleton path="/" handleLogin={handleLogin} handleLogout={handleLogout} userId={userId} />
         <AboutUs path="/aboutus" />
+        <Profile path="/profile" />
         <NotFound default />
       </Router>
     </>

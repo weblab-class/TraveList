@@ -28,6 +28,7 @@ const path = require("path"); // provide utilities for working with file and dir
 const api = require("./api");
 const auth = require("./auth");
 
+const cors = require("cors");
 // socket stuff
 const socketManager = require("./server-socket");
 
@@ -54,6 +55,8 @@ app.use(validator.checkRoutes);
 
 // allow us to process POST requests
 app.use(express.json());
+
+app.use(cors());
 
 // set up a session, which will persist login data across requests
 app.use(

@@ -1,14 +1,14 @@
 const mongoose = require("mongoose");
 
+const Item = require("./item");
+
 //packing list
-const ListSchema = new mongoose.Schema({
+const PackinglistSchema = new mongoose.Schema({
   user: String,
   bio: String,
   title: { type: String, default: "Untitled" },
-  itemtopack: String,
-  amountperitem: Number,
-  checked: Boolean,
+  // list: [Item],
 });
 
 // compile model from schema
-module.exports = mongoose.model("list", ListSchema);
+module.exports = mongoose.model("packinglist", PackinglistSchema);

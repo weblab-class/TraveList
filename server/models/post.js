@@ -1,12 +1,12 @@
 const mongoose = require("mongoose");
 
+const Item = require("./item");
+const List = require("./packinglist");
+
 //post
 const PostSchema = new mongoose.Schema({
-  user: String,
-  bio: String,
-  title: { type: String, default: "Untitled" },
-  itemtopack: String,
-  amountperitem: Number,
+  //list: List,
+  list_id: String,
   destination: String,
 });
 

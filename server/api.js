@@ -13,6 +13,7 @@ const express = require("express");
 const User = require("./models/user");
 const Comment = require("./models/comment");
 const Post = require("./models/post");
+const Item = require("./models/item");
 const Preferencespage = require("./models/preferencespage");
 const List = require("./models/packinglist");
 
@@ -52,6 +53,7 @@ router.get("/mylists", (req, res) => {
 });
 
 router.get("/comment", (req, res) => {
+  console.log(req.query);
   Comment.find({
     parent: req.query.parent,
   }).then((comments) => {
@@ -76,10 +78,6 @@ router.post("/newlist", (req, res) => {
     user: req.body.user,
     bio: req.body.bio,
     title: req.body.title,
-    itemtopack: req.body.itemtopack,
-    amountperitem: req.body,
-    amountperitem,
-    checked: req.body.checked,
   });
   //want to use creator name?
 
@@ -88,12 +86,7 @@ router.post("/newlist", (req, res) => {
 
 router.post("/newpost", (req, res) => {
   const newList = new List({
-    user: req.body.user,
-    bio: req.body.bio,
-    title: req.body.title,
-    itemtopack: req.body.itemtopack,
-    amountperitem: req.body,
-    amountperitem,
+    list_id: req.body.list_id,
     destination: req.body.destination,
   });
   //make creator name a constant thing?
@@ -120,7 +113,7 @@ router.get("/contactus", (req, res) => {
 });
 
 router.get("/home", (req, res) => {
-  res.send(home);
+  res.send("home");
 });
 
 // anything else falls to this "not found" case
