@@ -39,6 +39,8 @@ const App = () => {
     post("/api/logout");
   };
 
+  console.log("hi " + userId);
+
   return (
     <>
       <Router>

@@ -10,7 +10,7 @@
 const express = require("express");
 
 // import models so we can interact with the database
-const User = require("./models/user");
+const Account = require("./models/account");
 const Comment = require("./models/comment");
 const Post = require("./models/post");
 const Item = require("./models/item");
@@ -114,6 +114,20 @@ router.get("/contactus", (req, res) => {
 
 router.get("/home", (req, res) => {
   res.send("home");
+});
+
+router.post("/login", (req, res) => {
+  const newAccount = new Account({
+    name: req.body.name,
+    googleid: req.body.googleid,
+    password: req.body.password,
+    bio: req.body.bio,
+  });
+  newAccount.save().then((account) => res.send(account));
+});
+
+router.get("/account", (req, res) => {
+  Account.find({ googleid: req.query.parent }).then((account) => res.send(account));
 });
 
 // anything else falls to this "not found" case

@@ -6,7 +6,6 @@ const List = require("./packinglist");
 const AccountSchema = new mongoose.Schema({
   name: String,
   googleid: String,
-  parent: String,
   password: String,
   bio: String,
 });
