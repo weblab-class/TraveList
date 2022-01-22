@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import NavBar from "./modules/NavBar.js";
 import { Router } from "@reach/router";
 import NotFound from "./pages/NotFound.js";
 import Skeleton from "./pages/Skeleton.js";
@@ -39,15 +40,14 @@ const App = () => {
     setUserId(undefined);
     post("/api/logout");
   };
-<<<<<<< HEAD
-  console.log(MyList)
-=======
-
   console.log("hi " + userId);
-
->>>>>>> 153c5bdb8a2fea60af1f7aef5db9d1adf8889978
   return (
     <>
+      <NavBar
+        handleLogin={handleLogin}
+        handleLogout={handleLogout}
+        userId={userId}
+      />
       <Router>
         <Skeleton path="/" handleLogin={handleLogin} handleLogout={handleLogout} userId={userId} />
         <AboutUs path="/aboutus" />
