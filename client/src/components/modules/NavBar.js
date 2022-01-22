@@ -11,12 +11,17 @@ import "./NavBar.css";
 const NavBar = (props) => {
   return (
     <nav className="NavBar-container">
-      <div className="NavBar-title u-inlineBlock">TraveList</div>
       <Link to="/" className="NavBar-link">
-        Home
+        <div className="NavBar-title u-inlineBlock">TraveList</div>
       </Link>
       <Link to="/profile" className="NavBar-link">
         My Profile
+      </Link>
+      <Link to="/mylists" className="NavBar-link">
+        My Lists
+      </Link>
+      <Link to="/newlist" className="NavBar-link">
+        New List
       </Link>
     </nav>
   );
