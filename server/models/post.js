@@ -6,7 +6,7 @@ const List = require("./packinglist");
 //post
 const PostSchema = new mongoose.Schema({
   //list: List,
-  list_id: String,
+  list: String, //which list it is
   destination: String,
 });
 

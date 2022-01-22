@@ -49,7 +49,7 @@ router.post("/initsocket", (req, res) => {
 // |------------------------------|
 
 router.get("/mylists", (req, res) => {
-  List.find({ parent: req.query.parent }).then((lists) => res.send(lists));
+  List.find({ user: req.query.user }).then((lists) => res.send(lists));
 });
 
 router.get("/comment", (req, res) => {
@@ -85,13 +85,13 @@ router.post("/newlist", (req, res) => {
 });
 
 router.post("/newpost", (req, res) => {
-  const newList = new List({
-    list_id: req.body.list_id,
+  const newPost = new Post({
+    list: req.body.list_id,
     destination: req.body.destination,
   });
   //make creator name a constant thing?
 
-  newList.save().then((post) => res.send(post));
+  newPost.save().then((post) => res.send(post));
 });
 
 router.post("/comment", (req, res) => {

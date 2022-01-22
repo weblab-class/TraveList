@@ -43,11 +43,7 @@ const App = () => {
   console.log("hi " + userId);
   return (
     <>
-      <NavBar
-        handleLogin={handleLogin}
-        handleLogout={handleLogout}
-        userId={userId}
-      />
+      <NavBar handleLogin={handleLogin} handleLogout={handleLogout} userId={userId} />
       <Router>
         <Skeleton path="/" handleLogin={handleLogin} handleLogout={handleLogout} userId={userId} />
         <AboutUs path="/aboutus" />

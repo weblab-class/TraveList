@@ -52,6 +52,7 @@ const Profile = (props) => {
 
   const [userId, setUserId] = useState(undefined);
   const [userName, setUserName] = useState(undefined);
+  const [userPosts, setPosts] = useState([]);
 
   useEffect(() => {
     get("/api/whoami").then((user) => {
@@ -149,13 +150,13 @@ const Profile = (props) => {
       />
     ));
   } else {
-    postsList = <div>No packing lists yet!</div>;
+    postsList = <div>No posts yet!</div>;
   }
   return (
     <>
       {/* <NewList addNewList={addNewList} /> */}
-      {postsList}
       {userName}
+      {postsList}
     </>
   );
 };
