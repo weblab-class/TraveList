@@ -141,14 +141,17 @@ const Profile = (props) => {
   //export default Profile;
 
   if (hasPosts) {
-    postsList = posts.map((postObj) => (
-      <Card
-        key={`Card_${postObj._id}`}
-        _id={listObj._id}
-        creator_name={postObj.creator_name}
-        content={postObj.content}
-      />
-    ));
+    // postsList = posts.map((postObj) => (
+    //   <Card
+    //     key={`Card_${postObj._id}`}
+    //     _id={listObj._id}
+    //     creator_name={postObj.creator_name}
+    //     content={postObj.content}
+    //   />
+    // ));
+    <>
+      <p>Posts to be displayed here.</p>
+    </>
   } else {
     postsList = <div>No posts yet!</div>;
   }
