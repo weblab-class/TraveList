@@ -4,6 +4,7 @@ import NotFound from "./pages/NotFound.js";
 import Skeleton from "./pages/Skeleton.js";
 import AboutUs from "./pages/AboutUs.js";
 import Profile from "./pages/Profile.js";
+import MyList from "./pages/MyList.js";
 
 import "../utilities.css";
 import { socket } from "../client-socket.js";
@@ -38,13 +39,14 @@ const App = () => {
     setUserId(undefined);
     post("/api/logout");
   };
-
+  console.log(MyList)
   return (
     <>
       <Router>
         <Skeleton path="/" handleLogin={handleLogin} handleLogout={handleLogout} userId={userId} />
         <AboutUs path="/aboutus" />
         <Profile path="/profile" />
+        <MyList path="/mylist" />
         <NotFound default />
       </Router>
     </>
