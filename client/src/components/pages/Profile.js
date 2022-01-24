@@ -52,7 +52,7 @@ const Profile = (props) => {
 
   const [userId, setUserId] = useState(undefined);
   const [userName, setUserName] = useState(undefined);
-  const [userPosts, setPosts] = useState([]);
+  //const [userPosts, setPosts] = useState([]);
 
   useEffect(() => {
     get("/api/whoami").then((user) => {
@@ -141,17 +141,9 @@ const Profile = (props) => {
   //export default Profile;
 
   if (hasPosts) {
-    // postsList = posts.map((postObj) => (
-    //   <Card
-    //     key={`Card_${postObj._id}`}
-    //     _id={listObj._id}
-    //     creator_name={postObj.creator_name}
-    //     content={postObj.content}
-    //   />
-    // ));
-    <>
-      <p>Posts to be displayed here.</p>
-    </>
+    postsList = posts.map((postObj) => (
+        <p>Posts</p>
+    ));
   } else {
     postsList = <div>No posts yet!</div>;
   }

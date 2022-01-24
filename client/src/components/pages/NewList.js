@@ -1,5 +1,7 @@
 import React from "react";
 
+import "./NewList.css";
+
 const NewList = () => {
   return (
     <>
@@ -31,8 +33,13 @@ const NewList = () => {
             <option value="1">Yes</option>
             <option value="0">No</option>
             </select>
-            <h3>LUGGAGE PREFERENCE</h3> Light/minimal
-            Regular Comfortable
+
+            <h3>LUGGAGE PREFERENCE</h3>
+            <select type="select" name="luggage">
+                <option value="light">Light/minimal</option>
+                <option value="regular">Regular</option>
+                <option value="comfortable">Comfortable</option>
+            </select>
         </div>
 
         <div>

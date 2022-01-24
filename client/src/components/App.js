@@ -6,6 +6,7 @@ import Skeleton from "./pages/Skeleton.js";
 import AboutUs from "./pages/AboutUs.js";
 import Profile from "./pages/Profile.js";
 import MyList from "./pages/MyList.js";
+import NewList from "./pages/NewList.js";
 
 import "../utilities.css";
 import { socket } from "../client-socket.js";
@@ -49,6 +50,7 @@ const App = () => {
         <AboutUs path="/aboutus" />
         <Profile path="/profile" />
         <MyList path="/mylist" />
+        <NewList path="/newlist" />
         <NotFound default />
       </Router>
     </>
