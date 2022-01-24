@@ -24,7 +24,7 @@ const NewList = (props) => {
 
 
         post("/api/newlist", body).then((newlist) => {
-            alert(newlist);
+            //alert(newlist);
             window.location = "/list/" + newlist._id;
           });
       };
@@ -45,12 +45,12 @@ const NewList = (props) => {
 
         <div className="newlist">
             <h3>DURATION</h3>
-            <input type="text" defaultValue="1" name="nights" />nights
+            <input type="text" defaultValue="1" size="5" name="nights" />nights
         </div>
 
         <div className="newlist">
             <h3>TEMPERATURE (at destination)</h3>
-            <input type="text" value="9" name="degrees" />degrees
+            <input type="text" defaultValue="9" size="5" name="degrees" />degrees
         </div>
 
         <div className="newlist">

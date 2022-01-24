@@ -81,6 +81,8 @@ router.get("/allposts", (req, res) => {
   Post.find({}).then((posts) => res.send(posts));
 });
 
+
+
 // router.get("/allposts", (req, res) => {
 //   Post.find({}).sort({date: -1}).then((posts) => res.send(posts))
 // });
@@ -91,7 +93,6 @@ router.post("/newlist", (req, res) => {
     bio: req.body.bio,
     title: req.body.title,
   });
-  //want to use creator name?
 
   newList.save().then((list) => res.send(list));
 });
