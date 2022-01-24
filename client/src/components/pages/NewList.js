@@ -2,11 +2,37 @@ import React from "react";
 
 import "./NewList.css";
 
-const NewList = () => {
+import { post } from "../../utilities";
+
+const NewList = (props) => {
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        //const body = { parent: props.storyId, content: value };
+
+        var formData = new FormData(document.newlist);
+
+
+        const body = { };
+
+        // var object = {};
+        formData.forEach(function(value, key){
+        //     object[key] = value;
+            body[key] = value;
+        });
+        // //var json = JSON.stringify(object);
+
+
+        post("/api/newlist", body).then((newlist) => {
+            alert(newlist);
+            window.location = "/list/" + newlist._id;
+          });
+      };
+
   return (
     <>
-        <form action="/api/newlist" method="POST">
-        <div class="newlist">
+        <form action="/api/newlist" method="POST" name="newlist">
+        <div className="newlist">
             <h3>GENDER</h3>
             <select type="select" name="gender">
             <option value="1">Item 1</option>
@@ -17,17 +43,17 @@ const NewList = () => {
             </select>
         </div>
 
-        <div class="newlist">
+        <div className="newlist">
             <h3>DURATION</h3>
-            <input type="text" value="1" name="nights" />nights
+            <input type="text" defaultValue="1" name="nights" />nights
         </div>
 
-        <div class="newlist">
+        <div className="newlist">
             <h3>TEMPERATURE (at destination)</h3>
             <input type="text" value="9" name="degrees" />degrees
         </div>
 
-        <div class="newlist">
+        <div className="newlist">
             <h3>DOING LAUNDRY?</h3>
             <select type="select" name="laundry">
             <option value="1">Yes</option>
@@ -42,7 +68,7 @@ const NewList = () => {
             </select>
         </div>
 
-        <div class="newlist">
+        <div className="newlist">
             <h3>MAIN ACTIVITY(IES)</h3>
             Select at most 2:<br />
             <input type="checkbox" value="skiing" name="activity" />
@@ -57,7 +83,7 @@ const NewList = () => {
             Business-related
         </div>
 
-        <div class="newlist">
+        <div className="newlist">
             <h3>FORM OF TRAVEL</h3>
             <input type="checkbox" value="business" name="travel" />
             Plane
@@ -69,8 +95,8 @@ const NewList = () => {
             Boat/cruise
         </div>
 
-        <div class="newlist">
-            <input type="submit" value="Create List" />
+        <div className="newlist">
+            <input type="submit" value="Create List" onClick={handleSubmit} />
         </div>
         </form>
     </>
