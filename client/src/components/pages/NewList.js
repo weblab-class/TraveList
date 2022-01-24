@@ -5,8 +5,8 @@ import "./NewList.css";
 const NewList = () => {
   return (
     <>
-        <form action="/api/addtolist" method="POST">
-        <div>
+        <form action="/api/newlist" method="POST">
+        <div class="newlist">
             <h3>GENDER</h3>
             <select type="select" name="gender">
             <option value="1">Item 1</option>
@@ -17,17 +17,17 @@ const NewList = () => {
             </select>
         </div>
 
-        <div>
+        <div class="newlist">
             <h3>DURATION</h3>
             <input type="text" value="1" name="nights" />nights
         </div>
 
-        <div>
+        <div class="newlist">
             <h3>TEMPERATURE (at destination)</h3>
             <input type="text" value="9" name="degrees" />degrees
         </div>
 
-        <div>
+        <div class="newlist">
             <h3>DOING LAUNDRY?</h3>
             <select type="select" name="laundry">
             <option value="1">Yes</option>
@@ -42,7 +42,7 @@ const NewList = () => {
             </select>
         </div>
 
-        <div>
+        <div class="newlist">
             <h3>MAIN ACTIVITY(IES)</h3>
             Select at most 2:<br />
             <input type="checkbox" value="skiing" name="activity" />
@@ -57,7 +57,7 @@ const NewList = () => {
             Business-related
         </div>
 
-        <div>
+        <div class="newlist">
             <h3>FORM OF TRAVEL</h3>
             <input type="checkbox" value="business" name="travel" />
             Plane
@@ -67,6 +67,10 @@ const NewList = () => {
             Car
             <input type="checkbox" value="business" name="travel" />
             Boat/cruise
+        </div>
+
+        <div class="newlist">
+            <input type="submit" value="Create List" />
         </div>
         </form>
     </>
