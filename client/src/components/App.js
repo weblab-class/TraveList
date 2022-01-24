@@ -5,7 +5,7 @@ import NotFound from "./pages/NotFound.js";
 import Skeleton from "./pages/Skeleton.js";
 import AboutUs from "./pages/AboutUs.js";
 import Profile from "./pages/Profile.js";
-import MyList from "./pages/MyList.js";
+import MyLists from "./pages/MyLists.js";
 import NewList from "./pages/NewList.js";
 
 import "../utilities.css";
@@ -49,7 +49,7 @@ const App = () => {
         <Skeleton path="/" handleLogin={handleLogin} handleLogout={handleLogout} userId={userId} />
         <AboutUs path="/aboutus" />
         <Profile path="/profile" />
-        <MyList path="/mylist" />
+        <MyLists path="/mylists" />
         <NewList path="/newlist" />
         <NotFound default />
       </Router>
