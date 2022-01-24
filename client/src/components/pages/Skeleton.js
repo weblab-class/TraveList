@@ -11,8 +11,9 @@ const Skeleton = ({ userId, handleLogin, handleLogout }) => {
   return (
     <>
       <h1>What do I bring?</h1>
+      
       <p>Never sigh over packing again.</p>
-      <p>TravList — a free, personalized packing list builder based on your travel type and needs.</p>
+      <p>TraveList — a free, personalized packing list builder based on your travel type and needs.</p>
 
       {userId ? (
         <GoogleLogout
