@@ -65,9 +65,6 @@ const Profile = (props) => {
     });
   }, []);
 
-  console.log("hi " + userId);
-  console.log(userName);
-
   // useEffect(() => {
   //   document.title = "Profile Page";
   //   get(`/api/account`, { userid: props.userId }).then((userObj) => console.log(userObj));
@@ -141,9 +138,7 @@ const Profile = (props) => {
   //export default Profile;
 
   if (hasPosts) {
-    postsList = posts.map((postObj) => (
-        <p>Posts</p>
-    ));
+    postsList = posts.map((postObj) => <p>Post</p>);
   } else {
     postsList = <div>No posts yet!</div>;
   }
@@ -151,6 +146,13 @@ const Profile = (props) => {
     <>
       {/* <NewList addNewList={addNewList} /> */}
       {userName}
+      <form>
+        <label>
+          Bio:
+          <input type="text" name="name" />
+        </label>
+        <input type="submit" value="Save" />
+      </form>
       {postsList}
     </>
   );
