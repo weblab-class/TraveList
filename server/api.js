@@ -37,6 +37,18 @@ router.get("/whoami", (req, res) => {
   res.send(req.user);
 });
 
+router.post("/newitem", (req, res) => {
+  const newItem = new Item({
+    list: req.body.list, // whichlistitbelongsto
+    name: req.body.name,
+    amountperitem: req.body.amountperitem,
+    checked: req.body.checked,
+  });
+  //want to use creator name?
+
+  newItem.save().then((item) => res.send(item));
+});
+
 router.post("/initsocket", (req, res) => {
   // do nothing if user not logged in
   if (req.user)
