@@ -98,7 +98,8 @@ router.post("/newlist", (req, res) => {
 
 router.post("/newpost", (req, res) => {
   const newPost = new Post({
-    list: req.body.list_id,
+    bio: req.body.bio,
+    title: req.body.title,
     destination: req.body.destination,
   });
   //make creator name a constant thing?
