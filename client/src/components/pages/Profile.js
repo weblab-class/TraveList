@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { get } from "../../utilities";
 
-
 // import "../../utilities.css";
 // import "./Profile.css";
 
@@ -46,12 +45,6 @@ const Profile = (props) => {
   let postsList = null;
   const hasPosts = posts.length !== 0;
 
-
-  if (hasPosts) {
-    postsList = posts.map((postObj) => <p>{postObj.destination}</p>);
-  } else {
-    postsList = <div>No posts yet!</div>;
-  }
   return (
     <>
       {userName}
@@ -62,8 +55,6 @@ const Profile = (props) => {
         </label>
         <input type="submit" value="Save" />
       </form>
-
-      {postsList}
     </>
   );
 };

@@ -46,6 +46,7 @@ import { get } from "../../utilities";
 
 const Profile = (props) => {
   const [posts, setPosts] = useState([]);
+  console.log(props);
 
   // called when the "Feed" component "mounts", i.e.
   // when it shows up on screen
@@ -138,15 +139,21 @@ const Profile = (props) => {
   //export default Profile;
 
   if (hasPosts) {
-    postsList = posts.map((postObj) => <p>{postObj.destination}</p>);
+    postsList = posts.map((postObj) => (
+      <p>
+        Title: {postObj.title}
+        Description: {postObj.bio}
+        Destination: {postObj.destination}
+      </p>
+    ));
   } else {
-    postsList = <div>No posts yet!</div>;
+    postsList = <div>No lists yet!</div>;
   }
   return (
     <>
       {/* <NewList addNewList={addNewList} /> */}
       <h1>My Lists</h1>
-      {postsList}
+      {userName ? postsList : "Log in to see your lists"}
     </>
   );
 };

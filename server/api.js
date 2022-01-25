@@ -64,8 +64,8 @@ router.get("/mylists", (req, res) => {
   List.find({ user: req.query.user }).then((lists) => res.send(lists));
 });
 
-router.get("/alist", (req, res) => {
-  MyLists.find({ title: req.query.title }).then((list) => res.send(list));
+router.get("/list", (req, res) => {
+  List.find({ id: req.query.id }).then((list) => res.send(list));
 });
 
 router.get("/comment", (req, res) => {
@@ -94,6 +94,7 @@ router.post("/newlist", (req, res) => {
     user: req.body.user,
     bio: req.body.bio,
     title: req.body.title,
+    destination: req.body.destination,
   });
 
   newList.save().then((list) => res.send(list));
