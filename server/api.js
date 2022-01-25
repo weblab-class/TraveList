@@ -64,6 +64,10 @@ router.get("/mylists", (req, res) => {
   List.find({ user: req.query.user }).then((lists) => res.send(lists));
 });
 
+router.get("/alist", (req, res) => {
+  MyLists.find({ title: req.query.title }).then((list) => res.send(list));
+});
+
 router.get("/comment", (req, res) => {
   console.log(req.query);
   Comment.find({
@@ -91,7 +95,6 @@ router.post("/newlist", (req, res) => {
     bio: req.body.bio,
     title: req.body.title,
   });
-  //want to use creator name?
 
   newList.save().then((list) => res.send(list));
 });

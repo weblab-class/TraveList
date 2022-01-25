@@ -7,6 +7,7 @@ import AboutUs from "./pages/AboutUs.js";
 import Profile from "./pages/Profile.js";
 import MyLists from "./pages/MyLists.js";
 import NewList from "./pages/NewList.js";
+import PackingList from "./pages/PackingList.js";
 
 import "../utilities.css";
 import { socket } from "../client-socket.js";
@@ -51,6 +52,7 @@ const App = () => {
         <Profile path="/profile" />
         <MyLists path="/mylists" />
         <NewList path="/newlist" />
+        <PackingList path="/list/*" />
         <NotFound default />
       </Router>
     </>

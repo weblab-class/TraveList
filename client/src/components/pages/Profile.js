@@ -1,45 +1,6 @@
-// import React, { useState, useEffect } from "react";
-// import { get } from "../../utilities";
-
-// import "../../utilities.css";
-// import "./Profile.css";
-
-// const Profile = (props) => {
-//   const [user, setUser] = useState();
-
-//   useEffect(() => {
-//     document.title = "Profile Page";
-//     get(`/api/account`, { googleid: props.userId }).then((userObj) => setUser(userObj));
-//   }, []);
-
-//   if (!user) {
-//     return <div> Loading! </div>;
-//   }
-//   return (
-//     <>
-//       <div
-//       >
-//         <div className="Profile-avatar" />
-//       </div>
-//       <h1 className="Profile-name u-textCenter">{user.name}</h1>
-//       <hr className="Profile-linejj" />
-//       <div className="u-flex">
-//         <div className="Profile-subContainer u-textCenter">
-//           <h4 className="Profile-subTitle">Bio</h4>
-//           <div id="profile-description">
-//             I am really allergic to cats i don't know why i have a catbook
-//           </div>
-//         </div>
-//         </div>
-//       </div>
-//     </>
-//   );
-// };
-
-// export default Profile;
-
 import React, { useState, useEffect } from "react";
 import { get } from "../../utilities";
+
 
 // import "../../utilities.css";
 // import "./Profile.css";
@@ -85,57 +46,6 @@ const Profile = (props) => {
   let postsList = null;
   const hasPosts = posts.length !== 0;
 
-  // const Profile = (props) => {
-  //   const [user, setUser] = useState();
-
-  //   console.log(user);
-  //   console.log(props);
-
-  //   useEffect(() => {
-  //     document.title = "Profile Page";
-  //     get(`/api/user`, { userid: props.userId }).then((userObj) => setUser(userObj));
-  //   }, []);
-
-  //   const incrementCatHappiness = () => {
-  //     setCatHappiness(catHappiness + 1);
-  //   };
-
-  //   if (!user) {
-  //     return <div> Loading! </div>;
-  //   }
-  //   return (
-  //     <>
-  //       <div
-  //         className="Profile-avatarContainer"
-  //         onClick={() => {
-  //           incrementCatHappiness();
-  //         }}
-  //       >
-  //         <div className="Profile-avatar" />
-  //       </div>
-  //       <h1 className="Profile-name u-textCenter">{user.name}</h1>
-  //       <hr className="Profile-linejj" />
-  //       <div className="u-flex">
-  //         <div className="Profile-subContainer u-textCenter">
-  //           <h4 className="Profile-subTitle">About Me</h4>
-  //           <div id="profile-description">
-  //             I am really allergic to cats i don't know why i have a catbook
-  //           </div>
-  //         </div>
-  //         <div className="Profile-subContainer u-textCenter">
-  //           <h4 className="Profile-subTitle">Cat Happiness</h4>
-  //           <CatHappiness catHappiness={catHappiness} />
-  //         </div>
-  //         <div className="Profile-subContainer u-textCenter">
-  //           <h4 className="Profile-subTitle">My Favorite Type of Cat</h4>
-  //           <div id="favorite-cat">corgi</div>
-  //         </div>
-  //       </div>
-  //     </>
-  //   );
-  // };
-
-  //export default Profile;
 
   if (hasPosts) {
     postsList = posts.map((postObj) => <p>{postObj.destination}</p>);
@@ -144,7 +54,6 @@ const Profile = (props) => {
   }
   return (
     <>
-      {/* <NewList addNewList={addNewList} /> */}
       {userName}
       <form>
         <label>

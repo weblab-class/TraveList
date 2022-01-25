@@ -20,17 +20,36 @@ const NewList = (props) => {
     });
     // //var json = JSON.stringify(object);
 
-    post("/api/newlist", body).then((newlist) => {
+    post("/api/alist", body).then((newlist) => {
       alert(newlist);
       window.location = "/list/" + newlist._id;
     });
   };
-
   return (
     <>
-      <form action="/api/newlist" method="POST" name="newlist">
+      <form action="/api/alist" method="POST" name="newlist">
         <div className="newlist">
           <h2>TITLE</h2>
+          <form>
+            <label>
+              <input type="text" name="title" />
+            </label>
+            <input type="submit" value="Save" />
+          </form>
+        </div>
+
+        <div className="newlist">
+          <h2>Description</h2>
+          <form>
+            <label>
+              <input type="text" name="name" />
+            </label>
+            <input type="submit" value="Save" />
+          </form>
+        </div>
+
+        <div className="newlist">
+          <h2>Destination</h2>
           <form>
             <label>
               <input type="text" name="name" />
