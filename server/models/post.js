@@ -6,8 +6,9 @@ const List = require("./packinglist");
 //post
 const PostSchema = new mongoose.Schema({
   //list: List,
-  list: String, //which list it is
-  destination: String,
+  user: String,
+  bio: String,
+  title: { type: String, default: "Untitled" },
 });
 
 // compile model from schema

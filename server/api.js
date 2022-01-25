@@ -64,6 +64,10 @@ router.get("/mylists", (req, res) => {
   List.find({ user: req.query.user }).then((lists) => res.send(lists));
 });
 
+router.get("/alist", (req, res) => {
+  MyLists.find({ title: req.query.title }).then((list) => res.send(list));
+});
+
 router.get("/comment", (req, res) => {
   console.log(req.query);
   Comment.find({
@@ -81,8 +85,6 @@ router.get("/allposts", (req, res) => {
   Post.find({}).then((posts) => res.send(posts));
 });
 
-
-
 // router.get("/allposts", (req, res) => {
 //   Post.find({}).sort({date: -1}).then((posts) => res.send(posts))
 // });
@@ -99,7 +101,8 @@ router.post("/newlist", (req, res) => {
 
 router.post("/newpost", (req, res) => {
   const newPost = new Post({
-    list: req.body.list_id,
+    bio: req.body.bio,
+    title: req.body.title,
     destination: req.body.destination,
   });
   //make creator name a constant thing?

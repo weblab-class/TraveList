@@ -48,7 +48,7 @@ const Profile = (props) => {
 
 
   if (hasPosts) {
-    postsList = posts.map((postObj) => <p>Post</p>);
+    postsList = posts.map((postObj) => <p>{postObj.destination}</p>);
   } else {
     postsList = <div>No posts yet!</div>;
   }
@@ -62,6 +62,7 @@ const Profile = (props) => {
         </label>
         <input type="submit" value="Save" />
       </form>
+
       {postsList}
     </>
   );

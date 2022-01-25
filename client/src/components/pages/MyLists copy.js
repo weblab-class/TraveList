@@ -46,7 +46,7 @@ export default Profile;
 
 import React, { useState, useEffect } from "react";
 // import Card from "../modules/Card.js";
-import { NewStory } from "../modules/NewPostInput.js";
+import { NewStory } from "../modules/SingleList.js";
 
 import { get } from "../../utilities";
 
