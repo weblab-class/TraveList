@@ -45,7 +45,7 @@ import { get } from "../../utilities";
 // import "./Profile.css";
 
 const Profile = (props) => {
-  const [posts, setPosts] = useState([]);
+  const [lists, setLists] = useState([]);
   console.log(props);
 
   // called when the "Feed" component "mounts", i.e.
@@ -72,8 +72,8 @@ const Profile = (props) => {
   // }, []);
 
   useEffect(() => {
-    get("/api/myposts", { user: props._id }).then((posts) => {
-      setPosts(posts);
+    get("/api/mylists", { userId: props.userId }).then((lists) => {
+      setLists(lists);
     });
   }, []);
 
@@ -83,8 +83,8 @@ const Profile = (props) => {
   //   setStories([storyObj].concat(stories));
   // };
 
-  let postsList = null;
-  const hasPosts = posts.length !== 0;
+  let listsList = null;
+  const hasLists = lists.length !== 0;
 
   // const Profile = (props) => {
   //   const [user, setUser] = useState();
@@ -138,22 +138,22 @@ const Profile = (props) => {
 
   //export default Profile;
 
-  if (hasPosts) {
-    postsList = posts.map((postObj) => (
+  if (hasLists) {
+    listsList = lists.map((listObj) => (
       <p>
-        Title: {postObj.title}
-        Description: {postObj.bio}
-        Destination: {postObj.destination}
+        Title: {listObj.title}
+        Description: {listObj.description}
+        Destination: {listObj.destination}
       </p>
     ));
   } else {
-    postsList = <div>No lists yet!</div>;
+    listsList = <div>No lists yet!</div>;
   }
   return (
     <>
       {/* <NewList addNewList={addNewList} /> */}
       <h1>My Lists</h1>
-      {userName ? postsList : "Log in to see your lists"}
+      {userName ? listsList : "Log in to see your lists"}
     </>
   );
 };

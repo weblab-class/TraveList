@@ -2,29 +2,35 @@ import React, { useState, useEffect } from "react";
 import { get } from "../../utilities";
 
 const PackingList = (props) => {
-  const listId = props["*"];
-  const [list, setLists] = useState([]);
-
+  const listId = props.listId;
+  const [list, setList] = useState([]);
+  console.log(typeof listId);
   useEffect(() => {
-    get("/api/list", { _id: props.id }).then((list) => {
+    get("/api/list", { id: listId }).then((list) => {
+      console.log("made it bakc");
+      console.log(list);
       setList(list);
     });
   }, []);
 
   let listList = null;
   const hasList = list.length !== 0;
-
+  console.log("MARKER");
+  console.log(list);
   listList = list.map((listObj) => (
     <p>
-      Title: {listObj.title}
-      Description: {listObj.bio}
-      Destination: {listObj.bio}
+      <h2>Title: {listObj.title}</h2>
+      <h3>Description: {listObj.description}</h3>
+      <h3>Destination: {listObj.destination}</h3>
     </p>
   ));
 
+  console.log(list);
+
   return (
     <>
-      <p>Packing List {listList}</p>
+      <p>Packing List </p>
+      {listList}
       <h3> - Suitcases, backpack</h3>
       <h3> - Travel locks</h3>
       <h3> - Luggage tags</h3>

@@ -1,10 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 
 import "./NewList.css";
 
 import { post } from "../../utilities";
 
 const NewList = (props) => {
+  const [name, setName] = useState("");
+  const [destination, setDestination] = useState("");
+  const [description, setDescription] = useState("");
+
+  const updateName = (event) => {
+    const value = event.target.value;
+    setName(value);
+  };
+
+  const updateDestination = (event) => {
+    const value = event.target.value;
+    setDestination(value);
+  };
+
+  const updateDescription = (event) => {
+    const value = event.target.value;
+    setDescription(value);
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
     //const body = { parent: props.storyId, content: value };
@@ -18,9 +37,15 @@ const NewList = (props) => {
       //     object[key] = value;
       body[key] = value;
     });
+
+    body.title = name;
+    body.userId = props.userId;
+    body.description = description;
+    body.destination = destination; //
     // //var json = JSON.stringify(object);
 
     post("/api/newlist", body).then((newlist) => {
+      console.log(body);
       alert(newlist);
       window.location = "/list/" + newlist._id;
     });
@@ -32,7 +57,7 @@ const NewList = (props) => {
           <h2>TITLE</h2>
           <form>
             <label>
-              <input type="text" name="name" />
+              <input type="text" name="name" value={name} onChange={updateName} />
             </label>
             <input type="submit" value="Save" />
           </form>
@@ -42,7 +67,7 @@ const NewList = (props) => {
           <h2>Description</h2>
           <form>
             <label>
-              <input type="text" name="name" />
+              <input type="text" name="name" value={description} onChange={updateDescription} />
             </label>
             <input type="submit" value="Save" />
           </form>
@@ -52,7 +77,7 @@ const NewList = (props) => {
           <h2>Destination</h2>
           <form>
             <label>
-              <input type="text" name="name" />
+              <input type="text" name="name" value={destination} onChange={updateDestination} />
             </label>
             <input type="submit" value="Save" />
           </form>

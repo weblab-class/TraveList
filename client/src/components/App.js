@@ -48,12 +48,12 @@ const App = () => {
       <NavBar handleLogin={handleLogin} handleLogout={handleLogout} userId={userId} />
       <Router>
         <Skeleton path="/" handleLogin={handleLogin} handleLogout={handleLogout} userId={userId} />
-        <AboutUs path="/aboutus" />
-        <Profile path="/profile" />
-        <MyLists path="/mylists" />
-        <NewList path="/newlist" />
-        <PackingList path="/list/*" />
-        <NotFound default />
+        <AboutUs path="/aboutus" userId={userId} />
+        <Profile path="/profile" userId={userId} />
+        <MyLists path="/mylists" userId={userId} />
+        <NewList path="/newlist" userId={userId} />
+        <PackingList path="/list/:listId" userId={userId} />
+        <NotFound default userId={userId} />
       </Router>
     </>
   );
