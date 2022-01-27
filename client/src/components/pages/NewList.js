@@ -46,7 +46,6 @@ const NewList = (props) => {
 
     post("/api/newlist", body).then((newlist) => {
       console.log(body);
-      alert(newlist);
       window.location = "/list/" + newlist._id;
     });
   };

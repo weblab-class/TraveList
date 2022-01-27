@@ -45,7 +45,6 @@ const PackingList = (props) => {
       <h3> - Extra wallet</h3>
       <h3> - Phone, charger</h3>
       <h3> - Travel pillow, sleeping mask, earplugs</h3>
-      <h3> - *will add more later*</h3>
     </>
   );
 };

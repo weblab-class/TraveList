@@ -47,14 +47,10 @@ const Profile = (props) => {
 
   return (
     <>
-      {userName}
-      <form>
-        <label>
-          Bio:
-          <input type="text" name="name" />
-        </label>
-        <input type="submit" value="Save" />
-      </form>
+      <h1>Hi {userName}!</h1>
+      <h2>・To see information about your past lists, go to MyLists. </h2>
+      <h2>・To create a new packing list, go to NewList. </h2>
+      <h2>Happy packing!</h2>
     </>
   );
 };

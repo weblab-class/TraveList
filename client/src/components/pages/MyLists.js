@@ -141,9 +141,10 @@ const Profile = (props) => {
   if (hasLists) {
     listsList = lists.map((listObj) => (
       <p>
-        Title: {listObj.title}
-        Description: {listObj.description}
-        Destination: {listObj.destination}
+        <h3>-----</h3>
+        <h3>Title: {listObj.title}</h3>
+        <h3>Description: {listObj.description}</h3>
+        <h3>Destination: {listObj.destination}</h3>
       </p>
     ));
   } else {
