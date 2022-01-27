@@ -153,7 +153,7 @@ const Profile = (props) => {
   return (
     <>
       {/* <NewList addNewList={addNewList} /> */}
-      <h1>My Lists</h1>
+      <h2>My Lists</h2>
       {userName ? listsList : "Log in to see your lists"}
     </>
   );

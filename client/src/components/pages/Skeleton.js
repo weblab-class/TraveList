@@ -10,10 +10,13 @@ const GOOGLE_CLIENT_ID = "311605595679-8d0umojr6gearb9ks0kl6klrckififcs.apps.goo
 const Skeleton = ({ userId, handleLogin, handleLogout }) => {
   return (
     <>
-      <h1>What do I bring?</h1>
+      <h2>What do I bring?</h2>
       
-      <p>Never sigh over packing again.</p>
-      <p>TraveList — a free, personalized packing list builder based on your travel type and needs.</p>
+      <h3>Never sigh over packing again.</h3>
+      
+      <h1>TraveList</h1>
+
+      <h3>A free, personalized packing list builder based on your travel type and needs.</h3>
 
       {userId ? (
         <GoogleLogout

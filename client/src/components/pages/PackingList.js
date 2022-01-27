@@ -29,22 +29,36 @@ const PackingList = (props) => {
 
   return (
     <>
-      <p>Packing List </p>
+      <h2>Packing List </h2>
       {listList}
       <h3> - Suitcases, backpack</h3>
-      <h3> - Travel locks</h3>
+      <h3> - Travel locks, Passport, boarding pass</h3>
       <h3> - Luggage tags</h3>
       <h3> - Pens and paper</h3>
       <h3> - Snacks, drinks</h3>
       <h3> - Small pocket knife (not in carry-on!)</h3>
       <h3> - Rope, expandable clothesline</h3>
-      <h3> - Financial</h3>
       <h3> - Foreign currency</h3>
       <h3> - Emergency money</h3>
       <h3> - Credit card, debit card</h3>
       <h3> - Extra wallet</h3>
-      <h3> - Phone, charger</h3>
+      <h3> - Phone, charger, laptop</h3>
       <h3> - Travel pillow, sleeping mask, earplugs</h3>
+      <h3> - First Aid Kit</h3>
+      <h3> - Fancy clothing, relaxed clothing, bright clothing</h3>
+      <h3> - Dresss shoes, sandals, casual shoes</h3>
+      <h3> - Winter jacket, Dress jacket, casual jacket</h3>
+      <h3> - Hat, Sunglasses, watch</h3>
+      <h3> - Gold and silver accesories</h3>
+      <h3> - Sunscreen, moisturizer, lotion</h3>
+      <h3> - Towel, shower kit, toiletries</h3>
+      <h3> - Deodrant, hair wash, hairdryer</h3>
+      <h3> - Hiking boots, hiking backpack, water bottle</h3>
+      <h3> - Waterproof Ski Jacket, waterproof ski boots, ski leggeings</h3>
+      <h3> - VISA</h3>
+      <h3> - Portable power saver</h3>
+
+
     </>
   );
 };

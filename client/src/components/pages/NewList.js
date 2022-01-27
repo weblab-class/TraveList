@@ -62,7 +62,7 @@ const NewList = (props) => {
         </div>
 
         <div className="newlist">
-          <h2>Description</h2>
+          <h2>DESCRIPTION</h2>
           <form>
             <label>
               <input type="text" name="name" value={description} onChange={updateDescription} />
@@ -72,7 +72,7 @@ const NewList = (props) => {
         </div>
 
         <div className="newlist">
-          <h2>Destination</h2>
+          <h2>DESTINATION</h2>
           <form>
             <label>
               <input type="text" name="name" value={destination} onChange={updateDestination} />
@@ -82,7 +82,7 @@ const NewList = (props) => {
         </div>
 
         <div className="newlist">
-          <h3>GENDER</h3>
+          <h3>Gender</h3>
           <select type="select" name="gender">
             <option value="1">Item 1</option>
             <option value="2">Item 2</option>
@@ -93,25 +93,25 @@ const NewList = (props) => {
         </div>
 
         <div className="newlist">
-          <h3>DURATION</h3>
+          <h3>Duration</h3>
           <input type="text" defaultValue="1" name="nights" />
           nights
         </div>
 
         <div className="newlist">
-          <h3>TEMPERATURE (at destination)</h3>
+          <h3>Temperature(at destination)</h3>
           <input type="text" value="9" name="degrees" />
           degrees
         </div>
 
         <div className="newlist">
-          <h3>DOING LAUNDRY?</h3>
+          <h3>Doing Laundry?</h3>
           <select type="select" name="laundry">
             <option value="1">Yes</option>
             <option value="0">No</option>
           </select>
 
-          <h3>LUGGAGE PREFERENCE</h3>
+          <h3>Luggage preference</h3>
           <select type="select" name="luggage">
             <option value="light">Light/minimal</option>
             <option value="regular">Regular</option>
@@ -120,7 +120,7 @@ const NewList = (props) => {
         </div>
 
         <div className="newlist">
-          <h3>MAIN ACTIVITY(IES)</h3>
+          <h3>Main activities</h3>
           Select at most 2:
           <br />
           <input type="checkbox" value="skiing" name="activity" />
@@ -140,7 +140,7 @@ const NewList = (props) => {
         </div>
 
         <div className="newlist">
-          <h3>FORM OF TRAVEL</h3>
+          <h3>Form of travel</h3>
           <input type="checkbox" value="business" name="travel" />
           Plane
           <input type="checkbox" value="business" name="travel" />
