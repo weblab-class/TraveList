@@ -16,6 +16,7 @@ const Post = require("./models/post");
 const Item = require("./models/item");
 const Preferencespage = require("./models/preferencespage");
 const List = require("./models/packinglist");
+const Bio = require("./models/bio");
 
 // import authentication library
 const auth = require("./auth");
@@ -61,11 +62,11 @@ router.post("/initsocket", (req, res) => {
 // |------------------------------|
 
 router.get("/mylists", (req, res) => {
-  List.find({ user: req.query.user }).then((lists) => res.send(lists));
+  List.find({ userId: req.query.userId }).then((lists) => res.send(lists));
 });
 
-router.get("/alist", (req, res) => {
-  MyLists.find({ title: req.query.title }).then((list) => res.send(list));
+router.get("/list", (req, res) => {
+  List.find({ _id: req.query.id }).then((list) => res.send(list));
 });
 
 router.get("/comment", (req, res) => {
@@ -89,11 +90,24 @@ router.get("/allposts", (req, res) => {
 //   Post.find({}).sort({date: -1}).then((posts) => res.send(posts))
 // });
 
+router.get("/bio", (req, res) => {
+  Bio.find({ name: req.query.name }).then((bio) => res.send(bio));
+});
+
+router.post("/bio", (req, res) => {
+  const newBio = new Bio({
+    name: req.body.name,
+    bio: req.body.bio,
+  });
+});
+
 router.post("/newlist", (req, res) => {
   const newList = new List({
     user: req.body.user,
-    bio: req.body.bio,
+    description: req.body.description,
     title: req.body.title,
+    destination: req.body.destination,
+    userId: req.body.userId,
   });
 
   newList.save().then((list) => res.send(list));

@@ -5,8 +5,10 @@ const Item = require("./item");
 //packing list
 const PackinglistSchema = new mongoose.Schema({
   user: String,
-  bio: String,
+  description: String,
   title: { type: String, default: "Untitled" },
+  destination: String,
+  userId: String,
   // list: [Item],
 });
 

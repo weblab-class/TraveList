@@ -2,35 +2,22 @@ import React, { useState, useEffect } from "react";
 import { get } from "../../utilities";
 
 const PackingList = (props) => {
-  const listId = props.listId;
-  const [list, setList] = useState([]);
-  console.log(typeof listId);
+  const listId = props["*"];
+  const [list, setLists] = useState([]);
+
   useEffect(() => {
-    get("/api/list", { id: listId }).then((list) => {
-      console.log("made it bakc");
-      console.log(list);
+    get("/api/newlist", { user: props._id }).then((list) => {
       setList(list);
     });
   }, []);
 
   let listList = null;
   const hasList = list.length !== 0;
-  console.log("MARKER");
-  console.log(list);
+
   listList = list.map((listObj) => (
     <p>
-      <h2>Title: {listObj.title}</h2>
-      <h3>Description: {listObj.description}</h3>
-      <h3>Destination: {listObj.destination}</h3>
-    </p>
-  ));
-
-  console.log(list);
-
-  return (
-    <>
-      <p>Packing List </p>
-      {listList}
+      Title: {listObj.title}
+      Description: {listObj.bio}
       <h3> - Suitcases, backpack</h3>
       <h3> - Travel locks</h3>
       <h3> - Luggage tags</h3>
@@ -45,6 +32,13 @@ const PackingList = (props) => {
       <h3> - Extra wallet</h3>
       <h3> - Phone, charger</h3>
       <h3> - Travel pillow, sleeping mask, earplugs</h3>
+      <h3> - *will add more later*</h3>
+    </p>
+  ));
+
+  return (
+    <>
+      <p>hi{listList}</p>
     </>
   );
 };
